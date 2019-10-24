@@ -1,0 +1,3 @@
+[submodule "app/spec"]
+	path = app/spec
+	url = https://github.com/lewagon/fullstack-challenges-04-Rails-mister-cocktail-specs.git
