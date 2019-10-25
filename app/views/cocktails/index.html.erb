@@ -1,0 +1,19 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.01)), url(https://images.unsplash.com/photo-1518619660967-1d65afe62056?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);">
+<div class="navbar-lewagon navbar-brand">
+  <img  src="<%= asset_path 'logo_mixit.png' %>" alt="">
+</div class="align-items-center">
+  <h1>Cocktails Recipies<br>Collection</h1>
+  <%= link_to 'Add cocktail', new_cocktail_path, class: "btn btn-ghost"%>
+</div>
+<div class="container align-items-center">
+  <div class="cards py-5">
+    <% @cocktails.each do |cocktail|%>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <tr><p>
+        <td> <%= link_to cocktail.name, cocktail %> </td>
+        </p></tr>
+      </div>
+    <% end %>
+  </div>
+</div>
