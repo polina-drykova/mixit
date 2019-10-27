@@ -1,7 +1,8 @@
 
 <div class="navbar align-items-center brand border-bottom">
-  <%=link_to image_tag('logo_mixit.png', width: '80px', class: 'logo'), root_path %>
-  <img  class="avatar-new" src="<%= asset_path 'girl.jpeg' %>" style="width: 47px;" alt="">
+
+  <%=link_to image_tag('logo_mixit.png', width: '80px', class: 'logo mx-5'), root_path %>
+  <%=link_to image_tag('girl2.jpeg', width: '80px', class: 'avatar-new mx-5 ', style: "width: 47px;"), error_path %>
 </div>
 <div class="container my-5 d-flex justify-content-center show">
   <div class="card">
@@ -9,7 +10,7 @@
     <div class="d-flex">
       <div class="card-body">
         <h5 class="card-title"><%= @cocktail.name %></h5>
-          <p><em>Ingredients and doses:</em></p>
+          <p><em>Ingredient list:</em></p>
           <% @cocktail.doses.each do |dose|%>
             <tr><p class="card-text">
               <td> <%= dose.description %> of <strong> <%= dose.ingredient.name %></strong></td>
@@ -23,4 +24,7 @@
     </div>
     </div>
   </div>
+</div>
+<div class="footer align-items-center d-flex justify-content-center">
+      <p>Made with ♥️and glass of wine</p>
 </div>

@@ -1,7 +1,9 @@
 <div class="navbar align-items-center brand border-bottom">
-  <%=link_to image_tag('logo_mixit.png', width: '80px', class: 'logo'), root_path %>
-  <img  class="avatar-new" src="<%= asset_path 'girl.jpeg' %>" style="width: 47px;" alt="">
+
+  <%=link_to image_tag('logo_mixit.png', width: '80px', class: 'logo mx-5'), root_path %>
+  <%=link_to image_tag('girl2.jpeg', width: '80px', class: 'avatar-new mx-5 ', style: "width: 47px;"), error_path %>
 </div>
+
 <div class="container align-items-center">
   <div class="cards py-5">
     <% @cocktails.each do |cocktail|%>
@@ -15,5 +17,6 @@
 <%= link_to 'Add cocktail', new_cocktail_path, class: "btn btn-ghost"%>
 </div>
 
-<div class="link">
+<div class="footer align-items-center d-flex justify-content-center">
+      <p>Made with ♥️and glass of wine</p>
 </div>

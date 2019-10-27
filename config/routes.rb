@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
+  get '/error', to: 'pages#error'
   ### Cocktails:
   # 1. can see list of cocktails: get 'cocktails'
   # --> index
