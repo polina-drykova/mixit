@@ -11,7 +11,9 @@ class CocktailsController < ApplicationController
 
   def show
     @doses = Dose.all
-
+    # if want to include form 'new dose' on the page show: include:
+    # @dose = Dose.new
+    # and insert the form in show page
   end
 
   # 3. can create a new coctail: get 'cocktails/new'; post 'cocktails'

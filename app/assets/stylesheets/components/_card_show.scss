@@ -1,0 +1,35 @@
+.show .card {
+  // height: 400px;
+  margin-top: 15px;
+  width: 1000px;
+  display: flex;
+  flex-direction: row;
+  // justify-content: center;
+    h5 {
+      font-weight: 30px;
+    }
+}
+.row {
+  position: relative;
+}
+
+// img  {
+//   position: absolute;
+//   top: 0px;
+//   left: 0px;
+//   height:300px;
+//   width: auto;
+//   }
+
+// .card-body {
+//   // position: absolute;
+//   top: 20px;
+//   left: 100px;
+// }
+
+
+
+.card-img {
+  width: 60%;
+  height: auto;
+}

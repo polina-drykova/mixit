@@ -12,3 +12,12 @@
 @import "components/index";
 @import "pages/index";
 
+a {
+  color: #D15342;
+  transition: 0.3s;
+  &:hover {
+    text-decoration: none;
+    color: #E25A48;
+    opacity: 0.7;
+  }
+}

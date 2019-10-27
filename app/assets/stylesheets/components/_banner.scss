@@ -1,9 +1,10 @@
 .banner {
-  background-size: auto;
+  background-size: cover;
   background-position: center;
-  padding: 150px 0;
-  height: 500px;
+  padding: 0;
+  height: 800px;
   position: relative;
+  width: 100%;
 }
 
 .banner h1 {
@@ -13,7 +14,7 @@
   font-size: 55px;
   font-weight: bold;
   position: absolute;
-  top: 150px;
+  top: 160px;
   left: 180px;
 }
 
@@ -22,4 +23,16 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.foot {
+  position: absolute;
+  bottom: 15px;
+  right: 25px;
+  text-shadow: none;
+    p {
+      font-size:15px;
+      font-weight: lighter;
+      color: black;
+    }
 }

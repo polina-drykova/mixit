@@ -13,3 +13,19 @@
 .navbar-lewagon.navbar-brand img {
   width: 80px;
 }
+
+.navbar {
+  justify-content: space-between;
+  background: white;
+  height: 55px;
+  // position: absolute;
+
+}
+
+.navbar {
+  flex-grow: 0;
+}
+
+.navbar.brand img {
+  width: 80px;
+}

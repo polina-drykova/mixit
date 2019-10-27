@@ -1,14 +1,26 @@
-<p><strong><%= @cocktail.name %></strong></p>
-<p><em>Ingredients and doses:</em></p>
-  <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail) %>
 
-<% @cocktail.doses.each do |dose|%>
+<div class="navbar brand border-bottom">
+  <img  src="<%= asset_path 'logo_mixit.png' %>" alt="">
 
-      <tr><p>
-        <td> <%= dose.description %> of <strong> <%= dose.ingredient.name %></strong></td>
-        <td><%= link_to dose_path(dose), method: :delete do %><i class="fa fa-trash-alt" style="color: gray"></i></%></td>
-        <% end %>
-      </p></tr>
-<% end %>
-
-<%= link_to 'Back', cocktails_path %>
+</div>
+<div class="container my-5 d-flex justify-content-center show">
+  <div class="card">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg" class="card-img" alt="...">
+    <div class="d-flex">
+      <div class="card-body">
+        <h5 class="card-title"><%= @cocktail.name %></h5>
+          <p><em>Ingredients and doses:</em></p>
+          <% @cocktail.doses.each do |dose|%>
+            <tr><p class="card-text">
+              <td> <%= dose.description %> of <strong> <%= dose.ingredient.name %></strong></td>
+              <td><%= link_to dose_path(dose), method: :delete do %><i class="fa fa-trash-alt" style="color: gray"></i></%></td>
+              <% end %>
+            </p></tr>
+          <% end %>
+            <p class="card-text"><small class="text-muted"><%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail) %></small></p>
+        <%= link_to 'Back', cocktails_path %>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
