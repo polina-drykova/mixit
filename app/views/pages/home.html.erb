@@ -1,12 +1,18 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.01)), url(https://images.unsplash.com/photo-1518619660967-1d65afe62056?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);">
-<div class="navbar-lewagon navbar-brand">
-  <img  src="<%= asset_path 'logo_mixit.png' %>" alt="">
-</div class="align-items-center">
-  <h1>Cocktails Recipes<br>Collection</h1>
-  <%= link_to 'See more', cocktails_path, class: "btn btn-ghost"%>
-  <div class="foot">
-    <p>Made with ♥️ and glass of wine</p>
+  <div class="navbar bg-transparent brand border-none">
+    <%=link_to image_tag('logo_mixit.png', width: '80px', class: 'logo'), root_path %>
+    <img  class="avatar-new" src="<%= asset_path 'girl2.jpeg' %>" style="width: 47px;" alt="">
   </div>
+
+<div class="label">
+  <h5>Cocktails Recipes Collection</h5>
+  <%= link_to 'See more', cocktails_path, class: "btn btn-ghost" %>
+</div>
+
+
+  </div>
+    <div class="foot">
+      <p>Made with ♥️ and glass of wine</p>
+    </div>
 </div>
 <!--  -->
-

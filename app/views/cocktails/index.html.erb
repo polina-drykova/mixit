@@ -1,15 +1,19 @@
-
+<div class="navbar align-items-center brand border-bottom">
+  <%=link_to image_tag('logo_mixit.png', width: '80px', class: 'logo'), root_path %>
+  <img  class="avatar-new" src="<%= asset_path 'girl.jpeg' %>" style="width: 47px;" alt="">
+</div>
 <div class="container align-items-center">
   <div class="cards py-5">
     <% @cocktails.each do |cocktail|%>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1509448613959-44d527dd5d86?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60)">
         <tr><p>
         <td> <%= link_to cocktail.name, cocktail %> </td>
         </p></tr>
       </div>
     <% end %>
   </div>
+<%= link_to 'Add cocktail', new_cocktail_path, class: "btn btn-ghost"%>
 </div>
 
-
-<%= link_to 'Add cocktail', new_cocktail_path, class: "btn btn-ghost"%>
+<div class="link">
+</div>
