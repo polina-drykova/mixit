@@ -6,7 +6,7 @@
 </div>
 <div class="container my-5 d-flex justify-content-center show">
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1509448613959-44d527dd5d86?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" class="card-img" alt="...">
+    <%= cl_image_tag @cocktail.photo, class: 'card-img', height: 300, width: 400, crop: :fill %>
     <div class="d-flex">
       <div class="card-body">
         <h5 class="card-title"><%= @cocktail.name %></h5>

@@ -1,22 +1,51 @@
 <div class="navbar align-items-center brand border-bottom">
 
   <%=link_to image_tag('logo_mixit.png', width: '80px', class: 'logo mx-5'), root_path %>
-  <%=link_to image_tag('girl2.jpeg', width: '80px', class: 'avatar-new mx-5 ', style: "width: 47px;"), error_path %>
-</div>
-
-<div class="container align-items-center">
-  <div class="cards py-5">
-    <% @cocktails.each do |cocktail|%>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1509448613959-44d527dd5d86?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60)">
-        <tr><p>
-        <td> <%= link_to cocktail.name, cocktail %> </td>
-        </p></tr>
-      </div>
-    <% end %>
+  <div class="align-items-center d-flex justify-content-between" style="width: 240px">
+    <%= link_to 'Add cocktail', new_cocktail_path, class: "mx-4"%>
+    <%=link_to image_tag('girl2.jpeg', width: '80px', class: 'avatar-new mr-5', style: "width: 47px;"), error_path %>
   </div>
-<%= link_to 'Add cocktail', new_cocktail_path, class: "btn btn-ghost"%>
 </div>
 
-<div class="footer align-items-center d-flex justify-content-center">
+
+
+
+<!-- 1.container -->
+<div class="container align-items-center">
+<!-- 2. Card grid -->
+  <div class="cards py-5">
+    <!-- iteration -->
+    <% @cocktails.each do |cocktail|%>
+      <!-- 3. card trip  -->
+      <div class="card-trip">
+        <!-- main image -->
+        <%= cl_image_tag cocktail.photo, class: 'card-img', height: 300, width: 400, crop: :fill %>
+        <!-- 4. info part -->
+          <div class="card-trip-infos">
+              <div>
+                <h2> <%= link_to cocktail.name, cocktail %> </h2>
+              </div>
+            <%= link_to cocktail_path(cocktail), method: :delete do %> <i class="fa fa-trash-alt" style="color: gray"></i></%><% end %>
+          <!-- 4. info part -->
+          </div>
+      <!-- 3. card trip  -->
+      </div>
+    <!-- iteration -->
+    <% end %>
+  <!-- 2. Card grid -->
+  </div>
+    <div class="d-flex justify-content-center">
+      <%= link_to 'Add cocktail', new_cocktail_path, class: "btn btn-ghost"%>
+    </div>
+<!-- 1.container -->
+</div>
+
+
+
+
+
+
+
+<div class="footer">
       <p>Made with ♥️and glass of wine</p>
 </div>
