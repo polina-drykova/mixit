@@ -1,62 +1,74 @@
+
+
 .banner {
   background-size: cover;
   background-position: center;
   padding: 0;
-  height: 800px;
+  height: 100%;
   position: relative;
-  width: 100%;
+  width: auto;
+  // left: 0;
+  // right: 0;
+  // top: 0;
+  // bottom: 0;
+    img {
+      height: 100%;
+    }
 }
 
+// banner content:
 .label {
-  position: absolute;
-  width: 550px;
-  height: 250px;
-  top: 160px;
-  left: 180px;
-  padding: 20px;
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+  align-item: center;
+  margin-top: 10%;
 
     h5 {
+      color: #3C3C3B;
+      width: 40%;
       padding-bottom: 5px;
+      text-align: right;
+    }
+    .row {
+      width: 50%;
+      text-align: end;
+      align-item: end;
+      margin: 0;
     }
 
 }
 
-.banner.container {
-  margin: 2px;
+// texts:
+.banner {
+  h5 {
+    width: 50%;
+    font-size: 55px;
+  }
+
+  h1 {
+    margin: 0;
+    color: black;
+    font-size: 55px;
+    font-weight: bold;
+    position: absolute;
+  }
+  p {
+    font-size: 20px;
+    color: white;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+
 }
 
-// .banner.btn {
-//   position: absolute;
-//   top: 350px;
-//   left: 180px;
-// }
-.banner h5 {
-  font-size: 55px;
 
-}
-
-.banner h1 {
-  margin: 0;
-  color: black;
-  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 55px;
-  font-weight: bold;
-  position: absolute;
-  // top: 160px;
-  // left: 180px;
-}
-
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
+// footer:
 .foot {
   position: absolute;
   bottom: 15px;
-  right: 25px;
+  width: 100%;
+  text-align: center;
   text-shadow: none;
     p {
       font-size:15px;
@@ -64,3 +76,61 @@
       color: black;
     }
 }
+
+
+
+
+
+// responsivness:
+@media (min-width: 375px) and (max-width: 760px) {
+  .banner {
+    .row{
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    h5 {
+      width: 50%;
+      font-size: 40px;
+      text-align: center;
+    }
+
+  }
+}
+
+@media (min-width: 761px) and (max-width: 800px) {
+  .banner {
+    .row{
+      width: 55%;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    h5 {
+      width: 55%;
+      font-size: 50px;
+      text-align: left;
+    }
+
+  }
+}
+
+
+@media (min-width: 801px) and (max-width: 1500px) {
+  .banner {
+    .label {
+      margin-top: 7%;
+    }
+    .row{
+      display: flex;
+      justify-content: flex-start;
+    }
+    h5 {
+      width: 50%;
+      font-size: 60px;
+      text-align: left;
+    }
+  }
+}
+
+
