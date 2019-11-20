@@ -7,3 +7,149 @@
 @import 'banner';
 @import 'button';
 @import 'card_show';
+
+.container {
+  width: 80%;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.card-wrapper {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+  // overflow: hidden;
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  backface-visibility: hidden;
+
+  .name {
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    padding-left: 15%;
+    padding-right: 15%;
+
+    // right: 50%;
+    font-size: 32px;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+  }
+      &h4{
+        text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+    font-size: 30px;
+    text-shadow: horizontal-offset vertical-offset blur color;
+
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+      }
+
+  // Adds depth
+  perspective: 1000px;
+
+  &:hover .card--front {
+    transform: rotateY(-180deg);
+    position: relative;
+  }
+
+  &:hover .card--back {
+    transform: rotateY(0);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+
+}
+
+
+.card {
+  width: 300px;
+  height: 400px;
+  // box-shadow: 0 15px 40px rgba(0,0,0, .15);
+  transition: all 1s;
+  backface-visibility: hidden;
+
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+    // .description{
+    //   overflow: auto;
+    //   backface-visibility: hidden;
+    // }
+
+
+
+
+  &.card--front {
+    color: #fff;
+    // background-image: linear-gradient(to right,
+    //   rgba(126, 13, 111, .7), rgba(255, 0, 0, .5));
+  }
+
+  &.card--back {
+    // color: #fff;
+
+
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+
+
+}
+
+.card .description {
+    // color: #fff;
+  // height: 40%;
+    // grid-row: 5;
+    // grid-column: 1/-1;
+    width: 80%;
+    font-size: 0.86em;
+    border-radius: 5px;
+    font-weight: 600;
+    line-height: 1.4em;
+    // overflow: auto;
+    color: black;
+    padding-right: 10px;
+    // -webkit-overflow-scrolling: touch;
+    // -webkit-backface-visibility: hidden;
+    // -webkit-transition: all 500ms linear;
+
+    // &--front {
+    //       backface-visibility: hidden;
+    //           frontface-visibility: hidden;
+
+    // }
+    // &--back {
+    //   backface-visibility: hidden;
+    //           frontface-visibility: hidden;
+
+    // }
+  }
+
+
+
+
+// Cosmetic
+// .card {
+//   text-transform: uppercase;
+//   font-family: Courier;
+//   font-size: 3em;
+//   font-weight: 700;
+//   text-align: center;
+//   line-height: 300px;
+// }
+
+
+
+
+
+
+
