@@ -14,52 +14,61 @@
   <div class="container mx-auto">
     <div class="cards mx-auto">
       <!-- cards start -->
-        <% @cocktails.each do |cocktail|%>
-          <div class="card-wrapper" >
-            <!-- front start -->
-              <div class="card card--front" >
-                <%= cl_image_tag cocktail.photo, height: 400, width: 300, crop: :fill %>
-                <div class="name text-center">
-                  <h1>  <%= cocktail.name %></h1>
-                </div>
-                <!-- <div class="footer">
-                  <div class="rating">
-                    <i class="fa fa-mail-forward"></i> Auto Rotation
+        <!-- iteration through cocktails -->
+          <% @cocktails.each do |cocktail|%>
+            <div class="card-wrapper" >
+
+              <!-- front start -->
+                <div class="card card--front" >
+                  <div class="gradient-effect">
+                    <%= cl_image_tag cocktail.photo, style: 'z-index: -1', height: 400, width: 300, crop: :fill %>
                   </div>
-               </div> -->
-              </div>
-            <!-- front end -->
-            <!-- back start -->
-              <div class="card card--back">
-                <div class="name-back">
-                  <h4 class="text-center mt-3"><%= cocktail.name %></h4>
-                  <hr class="mb-1 mt-0" style="width: 70%;">
+                  <div class="name text-center">
+                    <h1>  <%= cocktail.name.upcase %></h1>
+                  </div>
                 </div>
-                <div class="description" style="">
-                  <% cocktail.doses.each do |dose|%>
-                    <tr><p class="card-text">
-                      <td> <%= dose.description %> of <strong> <%= dose.ingredient.name %></strong></td>
-                      <td><%= link_to dose_path(dose), method: :delete do %><i class="fa fa-trash-alt" style="color: gray"></i></%></td>
-                      <% end %>
-                    </p></tr>
-                  <% end %>
-                </div>
-                <div class="buttons py-5">
-                  <%= link_to cocktail_path(cocktail), method: :delete do %> <i class="fa fa-trash-alt" style="color: gray"></i></%><% end %>
-                  <p class="card-text"><small class="text-muted"><%= link_to 'Add a new dose', new_cocktail_dose_path(cocktail) %></small></p>
+              <!-- front end -->
 
+              <!-- back start -->
+                <div class="card card--back">
+                  <div class="name-back">
+                    <h4 class="text-center mt-3"><%= cocktail.name.upcase %></h4>
+                    <hr class="mb-1 mt-0">
+                  </div>
+                  <div class="description" style="">
+                      <!-- iteration through doses -->
+                        <% cocktail.doses.each do |dose|%>
+                          <tr>
+                            <h2 class="card-text mt-2 d-flex justify-content-between">
+                              <div class="one-side text-align-right" style="width: 33%;">
+                              <td style="color: #3C3C3B;"><%= dose.description %></td>
+                              </div>
+                              <div class="two-side text-align-left" style="width: 62%">
+                              <td><%= dose.ingredient.name %> <%= link_to dose_path(dose), method: :delete do %><i class="fa fa-trash-alt" style="color: lightgray; font-size: 12px; font-weight: lighter;"></i></%></td><% end %>
+                              </div>
+                            </h2>
+                          </tr>
+                        <% end %>
+                      <!-- iteration through doses end-->
+                  </div>
+                  <hr class=" mt-0 mb-0 mx-auto" style="width: 100%;">
+                  <div class="buttons my-auto py-auto mx-auto align-items-baseline">
+                    <%= link_to 'New dose', new_cocktail_dose_path(cocktail), class: 'btn-ghost-danger', width: '49%;' %>
+                    <%= link_to ' Delete ', cocktail_path(cocktail), method: :delete , class: 'btn-ghost-danger', width: '49%;' %>
+                  </div>
                 </div>
-              </div>
-            <!-- back start -->
+              <!-- back end -->
 
-          </div>
-        <% end %>
-      <!-- cards start end -->
+            </div>
+          <% end %>
+        <!-- iteration through cocktails end-->
+      <!-- cards end -->
     </div>
-    <!-- button add -->
-      <div class="d-flex justify-content-center">
+    <!-- button add a cocktail-->
+      <div class=" my-5 d-flex justify-content-center">
         <%= link_to 'Add cocktail', new_cocktail_path, class: "btn btn-ghost"%>
       </div>
+    <!-- button add a cocktail-->
   </div>
 <!-- card container end -->
 
