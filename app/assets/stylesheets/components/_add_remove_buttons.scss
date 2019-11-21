@@ -1,5 +1,5 @@
 .main-hr {
-  width: 30%;
+  width: 100%;
   border: none;
   border-top: 1px solid #c3c3c3;
 }
@@ -12,9 +12,10 @@
   overflow: hidden;
   position: relative;
   transition: width 0.2s ease-in-out;
+  font-size: 12px;
 }
 .add-btn:hover {
-  width: 165px;
+  width: 170px;
 }
 .add-btn::before,
 .add-btn::after {
@@ -41,6 +42,7 @@
   outline: none;
 }
 .btn-txt {
+  font-weight: bold;
   opacity: 0;
   transition: opacity 0.2s;
 }

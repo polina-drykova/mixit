@@ -9,9 +9,18 @@
 @import 'card_show';
 
 .container {
-  width: 80%;
-  margin-top: 20px;
+  width: 75%;
   padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.add-div {
+  width: 50%;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5%;
+  text-align: center;
 }
 
 .gradient-effect{
@@ -19,24 +28,27 @@
   display: block;
 
     &::before {
+      border-radius: 6px;
       content: '';
       position: absolute;
       left: 0;
       bottom: -1px;
       right: 0;
-      height: 101%;
+      height: 100.5%;
       width: 101%;
-      background: -webkit-linear-gradient(rgba(44, 62, 80, 0.8), rgba(226, 195, 133, 0.6));
+      background: -webkit-linear-gradient(rgba(44, 62, 80, 0.8), rgba(226, 195, 133, 0.1));
     }
 }
 
 .card-wrapper {
-  width: 300px;
-  height: 400px;
+  width: 290px;
+  height: 370px;
   object-fit: cover;
   margin-left: auto;
   margin-right: auto;
   backface-visibility: hidden;
+  border-radius: 6px;
+
 
   .name {
     width: 100%;
@@ -49,8 +61,19 @@
              0px 18px 23px rgba(0,0,0,0.1);
   }
 
+  .buttons {
+    width: 78%;
+    display: flex;
+    justify-content: space-around;
+    align-item: center;
+  }
+
   h1 {
-    font-size: 30px;
+    font-size: 26px;
+  }
+
+  h4 {
+    font-size: 18px;
   }
 
   // Adds depth
@@ -71,8 +94,9 @@
 
 
 .card {
-  width: 300px;
-  height: 400px;
+  width: 290px;
+  height: 370px;
+  border-radius: 6px;
   // box-shadow: 0 15px 40px rgba(0,0,0, .15);
   transition: all 1s;
   backface-visibility: hidden;
@@ -85,7 +109,6 @@
 
   &.card--front {
     color: #fff;
-
   }
 
   &.card--back {
@@ -98,8 +121,8 @@
 }
 
 .card .description {
-    width: 95%;
-    height: 68%;
+    width: 98%;
+    height: 73%;
     align-item: center;
     margin-left: auto;
     margin-right: auto;
