@@ -8,7 +8,16 @@
 </div>
 
 
-
+<!-- add a cocktail button -->
+<div class="add-div">
+  <%= link_to (new_cocktail_path) do %>
+    <button class="icon-btn add-btn">
+      <div class="add-icon"></div>
+      <div class="btn-txt">ADD NEW COCKTAIL</div>
+    </button>
+  <% end %>
+</div>
+<!-- add a cocktail end -->
 
 <!-- card container start -->
   <div class="container mx-auto">
@@ -21,9 +30,9 @@
               <!-- front start -->
                 <div class="card card--front" >
                   <div class="gradient-effect">
-                    <%= cl_image_tag cocktail.photo, style: 'z-index: -1', height: 400, width: 300, crop: :fill %>
+                    <%= cl_image_tag cocktail.photo, style: 'border-radius: 6px; z-index: -1', height: 370, width: 290, crop: :fill %>
                   </div>
-                  <div class="name text-center">
+                  <div class="name text-center mx-auto">
                     <h1>  <%= cocktail.name.upcase %></h1>
                   </div>
                 </div>
@@ -39,12 +48,12 @@
                       <!-- iteration through doses -->
                         <% cocktail.doses.each do |dose|%>
                           <tr>
-                            <h2 class="card-text mt-2 d-flex justify-content-between">
+                            <h2 class="card-text py-1 mt-2 d-flex justify-content-between">
                               <div class="one-side text-align-right" style="width: 33%;">
                               <td style="color: #3C3C3B;"><%= dose.description %></td>
                               </div>
                               <div class="two-side text-align-left" style="width: 62%">
-                              <td><%= dose.ingredient.name %> <%= link_to dose_path(dose), method: :delete do %><i class="fa fa-trash-alt" style="color: lightgray; font-size: 12px; font-weight: lighter;"></i></%></td><% end %>
+                              <td><%= dose.ingredient.name %> <%= link_to dose_path(dose), method: :delete do %><i class="fa fa-times" alt="remove" style="color: lightgray; font-size: 14px;"></i></%></td><% end %>
                               </div>
                             </h2>
                           </tr>
@@ -52,9 +61,14 @@
                       <!-- iteration through doses end-->
                   </div>
                   <hr class=" mt-0 mb-0 mx-auto" style="width: 100%;">
-                  <div class="buttons my-auto py-auto mx-auto align-items-baseline">
-                    <%= link_to 'New dose', new_cocktail_dose_path(cocktail), class: 'btn-ghost-danger', width: '49%;' %>
-                    <%= link_to ' Delete ', cocktail_path(cocktail), method: :delete , class: 'btn-ghost-danger', width: '49%;' %>
+                  <div class="buttons my-auto py-auto mx-auto">
+                    <%= link_to (new_cocktail_dose_path(cocktail)) do %>
+                    <i class="fas fa-plus-circle" style="color: lightgray; font-size: 22px; "></i>
+                    <% end %>
+
+                    <%= link_to (cocktail_path(cocktail)), method: :delete do %>
+                    <i class="fa fa-trash-alt" style="color: lightgray; font-size: 22px; font-weight: lighter;"></i>
+                    <% end %>
                   </div>
                 </div>
               <!-- back end -->
@@ -62,15 +76,30 @@
             </div>
           <% end %>
         <!-- iteration through cocktails end-->
+
+        <!-- another add-button within cards (need to choose which to keep) -->
+          <%= link_to (new_cocktail_path) do %>
+            <div class="card card-button mx-auto ">
+              <i class="fas fa-plus-circle" style=" "></i>
+            </div>
+          <% end %>
+        <!-- another add-button within cards (need to choose which to keep) -->
       <!-- cards end -->
     </div>
-    <!-- button add a cocktail-->
-      <div class=" my-5 d-flex justify-content-center">
-        <%= link_to 'Add cocktail', new_cocktail_path, class: "btn btn-ghost"%>
-      </div>
-    <!-- button add a cocktail-->
+
   </div>
 <!-- card container end -->
+
+    <!-- add a cocktail button -->
+    <div class="add-div">
+      <%= link_to (new_cocktail_path) do %>
+        <button class="icon-btn add-btn">
+          <div class="add-icon"></div>
+          <div class="btn-txt">ADD NEW COCKTAIL</div>
+        </button>
+      <% end %>
+    </div>
+    <!-- add a cocktail end -->
 
 
 
