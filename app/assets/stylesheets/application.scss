@@ -18,11 +18,11 @@
 
 
 a {
-  color: #D15342;
+  // color: lightgray;
   transition: 0.3s;
   &:hover {
     text-decoration: none;
-    color: #E25A48;
-    opacity: 0.7;
+    // opacity: 0.7;
+    // color: $darkpeach;
   }
 }

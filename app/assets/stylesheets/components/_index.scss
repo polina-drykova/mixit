@@ -7,6 +7,8 @@
 @import 'banner';
 @import 'button';
 @import 'card_show';
+@import 'card_button';
+
 
 .container {
   width: 75%;
@@ -23,23 +25,7 @@
   text-align: center;
 }
 
-.card-button {
-  background-color: transparent;
-  border: 1px solid #e5e3e3;
-  align-items: center;
 
-    i {
-      margin-top: auto;
-      margin-bottom: auto;
-      color: #D15342;
-      font-size: 80px;
-    }
-
-    &:hover {
-        background-color: #e5e3e3;
-        // border: 1px solid gray;
-    }
-}
 
 .gradient-effect{
   position: relative;
