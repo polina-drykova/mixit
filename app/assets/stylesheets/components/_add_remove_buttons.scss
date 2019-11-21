@@ -6,16 +6,16 @@
 .icon-btn {
   width: 50px;
   height: 50px;
-  border: 1px solid #e6a41d;
-  background: transparent;
+  border: 1px solid $darkpeach;
+  background: white;
   border-radius: 25px;
   overflow: hidden;
   position: relative;
   transition: width 0.2s ease-in-out;
-  font-size: 12px;
+  font-size: 14px;
 }
 .add-btn:hover {
-  width: 170px;
+  width: 185px;
 }
 .add-btn::before,
 .add-btn::after {
@@ -25,7 +25,7 @@
   height: 4px;
   width: 10px;
   top: calc(50% - 2px);
-  background: #e6a41d;
+  background: $darkpeach;
 }
 .add-btn::after {
   right: 14px;
@@ -42,7 +42,7 @@
   outline: none;
 }
 .btn-txt {
-  font-weight: bold;
+  // font-weight: bold;
   opacity: 0;
   transition: opacity 0.2s;
 }
@@ -62,7 +62,7 @@
   height: 20px;
   width: 2px;
   top: calc(50% - 10px);
-  background: #e6a41d;
+  background: $darkpeach;
   overflow: hidden;
 }
 .add-icon::before {
