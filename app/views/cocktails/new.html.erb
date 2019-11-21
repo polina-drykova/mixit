@@ -1,22 +1,33 @@
-<div class="navbar brand border-bottom">
-  <%=link_to image_tag('logo_mixit.png', width: '80px', class: 'logo mx-5'), root_path %>
-  <%=link_to image_tag('girl.jpeg', width: '80px', class: 'avatar-new mx-5', style: "width: 47px;"), error_path %>
-</div>
-<div class="container mt-4">
-  <div class="row">
-    <div class="col-md-6 mx-auto">
-      <div class="card p-5">
-        <div>
-          <h1>New cocktail:</h1>
-          <%= render 'form',cocktail: @cocktail %>
-          <div class="mt-3">
-          <%= link_to 'Back', cocktails_path %>
-          </div>
-        </div>
+<div class="" style="background-image: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.01)), url(https://images.unsplash.com/photo-1559849327-e27ed9234e35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);">
+
+<div class="form-container">
+   <div class="col-md-6 mx-auto">
+    <div>
+      <h1>New cocktail:</h1>
+      <%= render 'form',cocktail: @cocktail %>
+      <div class="mt-3">
+      <%= link_to 'Back', cocktails_path %>
       </div>
     </div>
-  </div>
 </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="footer align-items-center d-flex justify-content-center">
       <p>Made with ♥️and glass of wine</p>

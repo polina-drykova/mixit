@@ -71,11 +71,14 @@
         <!-- iteration through cocktails end-->
 
         <!-- another add-button within cards (need to choose which to keep) -->
-          <%= link_to (new_cocktail_path), title: 'Add new cocktail' do %>
+          <!-- button-modal for new cocktail form start -->
+
+          <%= link_to (new_cocktail_path), 'data-toggle' => 'modal', 'data-target' => '#exampleModalCenter' do %>
             <div class="card card-button mx-auto ">
               <i class="fas fa-plus-circle" style=" "></i>
             </div>
           <% end %>
+          <!-- button-modal for new cocktail form end -->
         <!-- another add-button within cards (need to choose which to keep) -->
       <!-- cards end -->
     </div>
@@ -97,7 +100,23 @@
 
 
 
-
+<!-- modal for new cocktail form start -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">ADD NEW COCKTAIL</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render 'form',cocktail: @cocktail %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal for new cocktail form end -->
 
 
 

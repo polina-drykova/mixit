@@ -4,6 +4,7 @@ class CocktailsController < ApplicationController
   # --> index
   def index
     @cocktails = Cocktail.all
+    @cocktail = Cocktail.new
   end
   # 2. can see the details of a given cocktail,
   # with the dose needed for each ingredient: get 'cocktails/42'
@@ -11,6 +12,8 @@ class CocktailsController < ApplicationController
 
   def show
     @doses = Dose.all
+
+
     # if want to include form 'new dose' on the page show: include:
     # @dose = Dose.new
     # and insert the form in show page
