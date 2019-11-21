@@ -10,7 +10,7 @@
   cursor: pointer;
   color: #3C3C3B;
     &:hover {
-      color: #3C3C3B;
+      color: $darkpeach;
     }
 
   svg {
@@ -26,7 +26,7 @@
     }
 
     .o2 {
-      stroke: #FFAC07;
+      stroke: $peach;
       stroke-dasharray: 20 420;
       stroke-dashoffset: 20;
       transition: all 1s ease-in-out;
@@ -41,8 +41,8 @@
   }
 
   &:hover {
-    color: #FFAC07;
-    text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+    color: $darkpeach;
+    // text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
 
     .o1{
       // fill: rgba(#CC8110, 0.3);
