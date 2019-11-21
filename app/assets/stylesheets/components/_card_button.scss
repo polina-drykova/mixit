@@ -1,0 +1,20 @@
+.card-button {
+  background-color: transparent;
+  border: 1px solid #e5e3e3;
+  align-items: center;
+
+    i {
+      margin-top: auto;
+      margin-bottom: auto;
+      color: $peach;
+      font-size: 80px;
+    }
+
+    &:hover {
+      background-color: $peach;
+      border: 1px solid $peach;
+        i {
+          color: white;
+        }
+    }
+}

@@ -7,6 +7,8 @@
 @import 'banner';
 @import 'button';
 @import 'card_show';
+@import 'card_button';
+
 
 .container {
   width: 75%;
@@ -23,23 +25,7 @@
   text-align: center;
 }
 
-.card-button {
-  background-color: transparent;
-  border: 1px solid #e5e3e3;
-  align-items: center;
 
-    i {
-      margin-top: auto;
-      margin-bottom: auto;
-      color: #D15342;
-      font-size: 80px;
-    }
-
-    &:hover {
-        background-color: #e5e3e3;
-        // border: 1px solid gray;
-    }
-}
 
 .gradient-effect{
   position: relative;
@@ -54,7 +40,7 @@
       right: 0;
       height: 100.5%;
       width: 101%;
-      background: -webkit-linear-gradient(rgba(44, 62, 80, 0.8), rgba(226, 195, 133, 0.1));
+      background: -webkit-linear-gradient(rgba(44, 62, 80, 0.8), rgba(251, 184, 141, 0.1));
     }
 }
 
@@ -84,6 +70,14 @@
     display: flex;
     justify-content: space-around;
     align-item: center;
+      i {
+        color: lightgray;
+        font-size: 22px;
+          &:hover {
+            opacity: none;
+            color: $darkpeach !important;
+          }
+      }
   }
 
   h1 {
@@ -150,12 +144,21 @@
     padding-right: 10px;
 
       .one-side {
+        width: 33%;
         text-align: right;
-        color: #FFAC07;
+        color: $darkpeach;
       }
 
       .two-side {
+        width: 62%;
         text-align: left;
+          i {
+            color: lightgray;
+            font-size: 14px;
+              &:hover {
+                color: $peach;
+              }
+          }
       }
 
       h2 {

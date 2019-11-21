@@ -42,11 +42,11 @@
                         <% cocktail.doses.each do |dose|%>
                           <tr>
                             <h2 class="card-text py-1 mt-2 d-flex justify-content-between">
-                              <div class="one-side text-align-right" style="width: 33%;">
-                              <td style="color: #3C3C3B;"><%= dose.description %></td>
+                              <div class="one-side">
+                                <td><%= dose.description %></td>
                               </div>
-                              <div class="two-side text-align-left" style="width: 62%">
-                              <td><%= dose.ingredient.name %> <%= link_to dose_path(dose), method: :delete do %><i class="fa fa-times" alt="remove" style="color: lightgray; font-size: 14px;"></i></%></td><% end %>
+                              <div class="two-side">
+                                <td><%= dose.ingredient.name %> <%= link_to dose_path(dose), method: :delete do %><i class="fa fa-times" alt="remove"></i></%></td><% end %>
                               </div>
                             </h2>
                           </tr>
@@ -56,11 +56,11 @@
                   <hr class=" mt-0 mb-0 mx-auto" style="width: 100%;">
                   <div class="buttons my-auto py-auto mx-auto">
                     <%= link_to (new_cocktail_dose_path(cocktail)) do %>
-                    <i class="fas fa-plus-circle" style="color: lightgray; font-size: 22px; "></i>
+                      <i class="fas fa-plus-circle" style=""></i>
                     <% end %>
 
                     <%= link_to (cocktail_path(cocktail)), method: :delete do %>
-                    <i class="fa fa-trash-alt" style="color: lightgray; font-size: 22px; font-weight: lighter;"></i>
+                      <i class="fa fa-trash-alt" style=" font-weight: lighter;"></i>
                     <% end %>
                   </div>
                 </div>
