@@ -1,170 +1,144 @@
 
 <!-- add a cocktail button -->
-<div class="add-div">
-  <%= link_to (new_cocktail_path) do %>
-    <button class="icon-btn add-btn">
-      <div class="add-icon"></div>
-      <div class="btn-txt">ADD NEW COCKTAIL</div>
-    </button>
-  <% end %>
-</div>
+  <div class="add-div">
+    <%= link_to (new_cocktail_path) do %>
+      <button class="icon-btn add-btn">
+        <div class="add-icon"></div>
+        <div class="btn-txt">ADD NEW COCKTAIL</div>
+      </button>
+    <% end %>
+  </div>
 <!-- add a cocktail end -->
 
 <!-- card container start -->
   <div class="container mx-auto">
-    <div class="cards mx-auto">
-      <!-- cards start -->
-        <!-- iteration through cocktails -->
-          <% @cocktails.each do |cocktail|%>
-            <div class="card-wrapper" >
+    <div id="main">
+      <div class="cards mx-auto">
+        <!-- cards start -->
+          <!-- iteration through cocktails -->
+            <% @cocktails.each do |cocktail|%>
+              <div class="card-wrapper" >
 
-              <!-- front start -->
-                <div class="card card--front" >
-                  <div class="gradient-effect">
-                    <%= cl_image_tag cocktail.photo, style: 'border-radius: 6px; z-index: -1', height: 370, width: 290, crop: :fill %>
-                  </div>
-                  <div class="name text-center mx-auto">
-                    <h1>  <%= cocktail.name.upcase %></h1>
-                  </div>
-                </div>
-              <!-- front end -->
-
-              <!-- back start -->
-                <div class="card card--back">
-                  <div class="name-back">
-                    <h4 class="text-center mt-3"><%= cocktail.name.upcase %></h4>
-                    <hr class="mb-1 mt-0">
-                  </div>
-                  <div class="description" style="">
-                      <!-- iteration through doses -->
-                        <% cocktail.doses.each do |dose|%>
-                          <tr>
-                            <h2 class="card-text py-1 mt-2 d-flex justify-content-between">
-                              <div class="one-side">
-                                <td><%= dose.description %></td>
-                              </div>
-                              <div class="two-side">
-                                <td><%= dose.ingredient.name %> <%= link_to dose_path(dose), method: :delete do %><i class="fa fa-times" alt="remove"></i></%></td><% end %>
-                              </div>
-                            </h2>
-                          </tr>
-                        <% end %>
-                      <!-- iteration through doses end-->
-                  </div>
-                  <hr class=" mt-0 mb-0 mx-auto" style="width: 100%;">
-                  <div class="buttons my-auto py-auto mx-auto">
-
-                    <%= link_to (new_cocktail_dose_path(cocktail)), 'data-toggle' => 'modal', 'data-target' => '#newDose' do %>
-                      <i class="fas fa-plus-circle" style=""></i>
-                    <% end %>
-
-                    <%= link_to (cocktail_path(cocktail)), method: :delete do %>
-                      <i class="fa fa-trash-alt" style=" font-weight: lighter;"></i>
-                    <% end %>
-                  </div>
-                </div>
-              <!-- back end -->
-
-            </div>
-
-            <!-- modal for new dose form start -->
-              <div class="modal fade" id="newDose" tabindex="-1" role="dialog" aria-labelledby="newDoseTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="newDoseTitle">ADD NEW DOSE</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
+                <!-- front start -->
+                  <div class="card card--front" >
+                    <div class="gradient-effect">
+                      <%= cl_image_tag cocktail.photo, style: 'border-radius: 6px; z-index: -1', height: 370, width: 290, crop: :fill %>
                     </div>
-                    <div class="modal-body">
-                      <%= simple_form_for [cocktail, @dose] do |f| %>
-                        <div class="form-inputs">
-                          <%= f.association :ingredient %>
-                          <%= f.input :description%>
-                        </div>
-                        <div class="form-actions mt-4 mb-3">
-                          <%= f.button :submit, class: "create-button" %>
-                        </div>
+                    <div class="name text-center mx-auto">
+                      <h1>  <%= cocktail.name.upcase %></h1>
+                    </div>
+                  </div>
+                <!-- front end -->
+
+                <!-- back start -->
+                  <div class="card card--back">
+                    <div class="name-back">
+                      <h4 class="text-center mt-3"><%= cocktail.name.upcase %></h4>
+                      <hr class="mb-1 mt-0">
+                    </div>
+                    <div class="description" style="">
+                        <!-- iteration through doses -->
+                          <% cocktail.doses.each do |dose|%>
+                            <tr>
+                              <h2 class="card-text py-1 mt-2 d-flex justify-content-between">
+                                <div class="one-side">
+                                  <td><%= dose.description %></td>
+                                </div>
+                                <div class="two-side">
+                                  <td><%= dose.ingredient.name %> <%= link_to dose_path(dose), method: :delete do %><i class="fa fa-times" alt="remove"></i></%></td><% end %>
+                                </div>
+                              </h2>
+                            </tr>
+                          <% end %>
+                        <!-- iteration through doses end-->
+                    </div>
+                    <hr class=" mt-0 mb-0 mx-auto" style="width: 100%;">
+                    <div class="buttons my-auto py-auto mx-auto">
+
+                      <%= link_to (new_cocktail_dose_path(cocktail)), 'data-toggle' => 'modal', 'data-target' => '#newDose' do %>
+                        <i class="fas fa-plus-circle" style=""></i>
+                      <% end %>
+
+                      <%= link_to (cocktail_path(cocktail)), method: :delete do %>
+                        <i class="fa fa-trash-alt" style=" font-weight: lighter;"></i>
                       <% end %>
                     </div>
                   </div>
-                </div>
-              </div>
-            <!-- modal for new dose form end -->
+                <!-- back end -->
 
-            <!-- modal for new cocktail form start -->
-              <div class="modal fade" id="newCocktail" tabindex="-1" role="dialog" aria-labelledby="newCocktailTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="newCocktailTitle">ADD NEW COCKTAIL</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <%= render 'form', cocktail: @cocktail %>
+              </div>
+
+              <!-- modal for new dose form start -->
+                <div class="modal fade" id="newDose" tabindex="-1" role="dialog" aria-labelledby="newDoseTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="newDoseTitle">ADD NEW DOSE</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <%= simple_form_for [cocktail, @dose] do |f| %>
+                          <div class="form-inputs">
+                            <%= f.association :ingredient %>
+                            <%= f.input :description%>
+                          </div>
+                          <div class="form-actions mt-4 mb-3">
+                            <%= f.button :submit, class: "create-button" %>
+                          </div>
+                        <% end %>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            <!-- modal for new cocktail form end -->
+              <!-- modal for new dose form end -->
 
-          <% end %>
-        <!-- iteration through cocktails end-->
+              <!-- modal for new cocktail form start -->
+                <div class="modal fade" id="newCocktail" tabindex="-1" role="dialog" aria-labelledby="newCocktailTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="newCocktailTitle">ADD NEW COCKTAIL</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <%= render 'form', cocktail: @cocktail %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- modal for new cocktail form end -->
 
-        <!-- another add-button within cards (need to choose which to keep) -->
-          <!-- button-modal for new cocktail form start -->
-            <%= link_to (new_cocktail_path), 'data-toggle' => 'modal', 'data-target' => '#newCocktail' do %>
-              <div class="card card-button mx-auto ">
-                <i class="fas fa-plus-circle"></i>
-              </div>
             <% end %>
-          <!-- button-modal for new cocktail form end -->
-        <!-- another add-button within cards (need to choose which to keep) -->
+          <!-- iteration through cocktails end-->
 
-      <!-- cards end -->
+          <!-- another add-button within cards (need to choose which to keep) -->
+            <!-- button-modal for new cocktail form start -->
+              <%= link_to (new_cocktail_path), 'data-toggle' => 'modal', 'data-target' => '#newCocktail' do %>
+                <div class="card card-button mx-auto ">
+                  <i class="fas fa-plus-circle"></i>
+                </div>
+              <% end %>
+            <!-- button-modal for new cocktail form end -->
+          <!-- another add-button within cards (need to choose which to keep) -->
+
+        <!-- cards end -->
+      </div>
+<!-- add a cocktail button -->
+  <div class="add-div mt-5">
+    <%= link_to (new_cocktail_path) do %>
+      <button class="icon-btn add-btn">
+        <div class="add-icon"></div>
+        <div class="btn-txt">ADD NEW COCKTAIL</div>
+      </button>
+    <% end %>
+  </div>
+<!-- add a cocktail end -->
     </div>
-
   </div>
 <!-- card container end -->
 
-    <!-- add a cocktail button -->
-      <div class="add-div">
-        <%= link_to (new_cocktail_path) do %>
-          <button class="icon-btn add-btn">
-            <div class="add-icon"></div>
-            <div class="btn-txt">ADD NEW COCKTAIL</div>
-          </button>
-        <% end %>
-      </div>
-    <!-- add a cocktail end -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="footer">
-      <p>Made with ♥️and glass of wine</p>
-</div>

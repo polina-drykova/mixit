@@ -13,8 +13,8 @@
 
   <body>
     <%= render 'shared/navbar' unless controller_name == "registrations" || controller_name == "sessions" ||action_name == "home" %>
-
     <%= yield %>
+    <%= render 'shared/footer' unless action_name == "home" %>
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>
   </body>

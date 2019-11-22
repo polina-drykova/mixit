@@ -1,12 +1,14 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.01)), url(https://images.unsplash.com/photo-1559849327-ae1157eb88b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);">
-  <div class="navbar bg-transparent brand border-none">
-    <div class="navbar-box mx-auto d-flex justify-content-between" style="width: 80%">
-      <div class="my-auto">
-        <%=link_to image_tag('mixit3.png', style: "height: 20px;"), root_path %>
+  <!-- navbar for homepage only start -->
+    <div class="navbar bg-transparent brand border-none">
+      <div class="navbar-box mx-auto d-flex justify-content-between" style="width: 80%">
+        <div class="my-auto">
+          <%=link_to image_tag('mixit3.png', style: "height: 20px;"), root_path %>
+        </div>
+        <%=link_to image_tag('girl.jpeg', width: '80px', class: 'avatar-new', style: "width: 47px;"), error_path %>
       </div>
-      <%=link_to image_tag('girl.jpeg', width: '80px', class: 'avatar-new', style: "width: 47px;"), error_path %>
     </div>
-  </div>
+  <!-- navbar for homepage only end -->
   <!-- body -->
     <div class="label text-align-right">
       <h5 class="pr-2">Cocktails Recipes Collection</h5>
@@ -25,8 +27,8 @@
   <!-- body end -->
 </div>
 
-<!-- footer -->
+<!-- footer for homepage only start -->
   <div class="foot">
     <p>Made with ♥️and glass of wine</p>
   </div>
-<!-- footer end -->
+<!-- footer for homepage only end -->
