@@ -15,4 +15,8 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
+import { previewImageOnFileSelect } from '../components/photo_preview';
+
 console.log('Hello World from Webpacker')
+previewImageOnFileSelect();
+

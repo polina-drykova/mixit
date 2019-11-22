@@ -9,6 +9,118 @@
 @import 'card_show';
 @import 'card_button';
 
+// form start
+.modal-content {
+  border-radius: 6px;
+}
+.close:focus {
+  outline: none;
+}
+// input field css:
+.input-effect {
+  background-color: white;
+  &:after {
+    background-color: white;
+  }
+}
+input:focus {
+  outline: none;
+}
+.effect-18:focus {
+  box-shadow: none;
+  background-color: white;
+  border-color: transparent;
+}
+.effect-18 {
+  border: 0;
+  padding: 4px 0;
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+}
+.effect-18 ~ .focus-border {
+  position: absolute;
+  bottom: 0; left: 50%;
+  width: 0; height: 2px;
+  background-color: $darkpeach;
+  transition: 0.4s;
+}
+.effect-18:focus ~ .focus-border,
+.has-content.effect-18 ~ .focus-border {
+  width: 100%;
+  transition: 0.4s;
+  left: 0;
+}
+.effect-18 ~ label {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 9px;
+  color: black;
+  transition: 0.3s;
+  z-index: -1;
+  letter-spacing: 0.5px;
+}
+.effect-18:focus ~ label, .has-content.effect-18 ~ label {
+  top: -16px;
+  font-size: 12px;
+  color: black;
+  transition: 0.3s;
+}
+.upload-photo-link {
+  margin-top: auto;
+  border: gray solid 1px;
+  border-radius: 6px !important;
+  padding: 11px 20px;
+  cursor: pointer;
+  font-weight: lighter;
+  color: gray;
+  background: white;
+  border-radius: 2px;
+  transition: 0.5s;
+    &:hover {
+      color: $peach;
+      border: $darkpeach solid 1px;
+      border-radius: 6px;
+    }
+}
+// input field css end
+
+// upload file css:
+.hidden {
+  display: none;
+}
+
+.create-button {
+  align-item: center;
+  border-radius: 6px;
+  background-color: transparent;
+  color: $darkpeach;
+  cursor: pointer;
+  border: $darkpeach solid 1px;
+  padding: 12px 20px;
+    &:hover {
+      border: $darkpeach solid 1px;
+      color: white;
+      background-color: $darkpeach;
+    }
+}
+// upload file css end
+
+// centering the form:
+.upload-btn-wrapper, .form-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top:auto;
+    img {
+      object-fit: cover;
+      border-radius: 6px;
+      margin-top: 0;
+      margin-bottom: 2%;
+    }
+}
+// // form end
+
 
 .container {
   width: 75%;
@@ -24,8 +136,6 @@
   margin-top: 1.5%;
   text-align: center;
 }
-
-
 
 .gradient-effect{
   position: relative;
