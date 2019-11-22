@@ -4,18 +4,17 @@ class CocktailsController < ApplicationController
   # --> index
   def index
     @cocktails = Cocktail.all
+    # new cocktail part
     @cocktail = Cocktail.new
+    # new dose part
     @dose = Dose.new
-
-end
+  end
   # 2. can see the details of a given cocktail,
   # with the dose needed for each ingredient: get 'cocktails/42'
   # --> show
 
   def show
     @doses = Dose.all
-
-
     # if want to include form 'new dose' on the page show: include:
     # @dose = Dose.new
     # and insert the form in show page
@@ -26,7 +25,9 @@ end
   # --> create
 
   def new
+    # new cocktail part
     @cocktail = Cocktail.new
+    # new dose part
     @cocktail_dose = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new
     @ingredients = Ingredient.all
@@ -34,21 +35,23 @@ end
   end
 
   def create
+    # new cocktail part
     @cocktail = Cocktail.new(cocktail_params)
-    if @cocktail.save
-      # redirect_to cocktail_path(@cocktail)
-      redirect_to cocktails_path
-    else
-      render :new
-    end
+      if @cocktail.save
+        # redirect_to cocktail_path(@cocktail)
+        redirect_to cocktails_path
+      else
+        render :new
+      end
+    # new dose part
     @cocktail_dose = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new(dose_params)
     @dose.cocktail = @cocktail_dose
-    if @dose.save
-      redirect_to cocktails_path
-    else
-      render :new
-    end
+      if @dose.save
+        redirect_to cocktails_path
+      else
+        render :new
+      end
   end
 
   def destroy
