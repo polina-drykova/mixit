@@ -1,5 +1,4 @@
 class DosesController < ApplicationController
-
   # 1. A user can add a new dose (ingredient/description pair)
   # to an existing cocktail
   # GET "cocktails/42/doses/new"
@@ -17,11 +16,11 @@ class DosesController < ApplicationController
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new(dose_params)
     @dose.cocktail = @cocktail
-    if @dose.save
-      redirect_to cocktail_path(@cocktail)
-    else
-      render :new
-    end
+      if @dose.save
+        redirect_to cocktails_path
+      else
+        render :new
+      end
   end
 
   # 2. A user can delete a dose that belongs to an existing cocktail.

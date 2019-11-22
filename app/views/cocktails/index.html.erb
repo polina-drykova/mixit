@@ -1,6 +1,4 @@
 
-
-
 <!-- add a cocktail button -->
 <div class="add-div">
   <%= link_to (new_cocktail_path) do %>
@@ -55,7 +53,8 @@
                   </div>
                   <hr class=" mt-0 mb-0 mx-auto" style="width: 100%;">
                   <div class="buttons my-auto py-auto mx-auto">
-                    <%= link_to (new_cocktail_dose_path(cocktail)) do %>
+
+                    <%= link_to (new_cocktail_dose_path(cocktail)), 'data-toggle' => 'modal', 'data-target' => '#newDose' do %>
                       <i class="fas fa-plus-circle" style=""></i>
                     <% end %>
 
@@ -67,19 +66,64 @@
               <!-- back end -->
 
             </div>
+
+            <!-- modal for new dose form start -->
+              <div class="modal fade" id="newDose" tabindex="-1" role="dialog" aria-labelledby="newDoseTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="newDoseTitle">ADD NEW DOSE</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <%= simple_form_for [cocktail, @dose] do |f| %>
+                        <div class="form-inputs">
+                          <%= f.association :ingredient %>
+                          <%= f.input :description%>
+                        </div>
+                        <div class="form-actions mt-4 mb-3">
+                          <%= f.button :submit, class: "create-button" %>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- modal for new dose form end -->
+
+            <!-- modal for new cocktail form start -->
+              <div class="modal fade" id="newCocktail" tabindex="-1" role="dialog" aria-labelledby="newCocktailTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="newCocktailTitle">ADD NEW COCKTAIL</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <%= render 'form', cocktail: @cocktail %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- modal for new cocktail form end -->
+
           <% end %>
         <!-- iteration through cocktails end-->
 
         <!-- another add-button within cards (need to choose which to keep) -->
           <!-- button-modal for new cocktail form start -->
-
-          <%= link_to (new_cocktail_path), 'data-toggle' => 'modal', 'data-target' => '#exampleModalCenter' do %>
-            <div class="card card-button mx-auto ">
-              <i class="fas fa-plus-circle" style=" "></i>
-            </div>
-          <% end %>
+            <%= link_to (new_cocktail_path), 'data-toggle' => 'modal', 'data-target' => '#newCocktail' do %>
+              <div class="card card-button mx-auto ">
+                <i class="fas fa-plus-circle"></i>
+              </div>
+            <% end %>
           <!-- button-modal for new cocktail form end -->
         <!-- another add-button within cards (need to choose which to keep) -->
+
       <!-- cards end -->
     </div>
 
@@ -87,36 +131,21 @@
 <!-- card container end -->
 
     <!-- add a cocktail button -->
-    <div class="add-div">
-      <%= link_to (new_cocktail_path) do %>
-        <button class="icon-btn add-btn">
-          <div class="add-icon"></div>
-          <div class="btn-txt">ADD NEW COCKTAIL</div>
-        </button>
-      <% end %>
-    </div>
+      <div class="add-div">
+        <%= link_to (new_cocktail_path) do %>
+          <button class="icon-btn add-btn">
+            <div class="add-icon"></div>
+            <div class="btn-txt">ADD NEW COCKTAIL</div>
+          </button>
+        <% end %>
+      </div>
     <!-- add a cocktail end -->
 
 
 
 
-<!-- modal for new cocktail form start -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">ADD NEW COCKTAIL</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <%= render 'form',cocktail: @cocktail %>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- modal for new cocktail form end -->
+
+
 
 
 
