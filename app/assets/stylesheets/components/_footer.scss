@@ -1,28 +1,16 @@
-// .footer {
-//   background-color: white;
-//   width: 100%;
-//   border: top;
-//   height: 7%;
-//   position: absolute;
-//   bottom: 0px;
-//   right: 0px;
-// }
-
-// .footer p {
-//   font-weight: lighter;
-//   color: gray;
-//   margin: 0;
-//   padding: 0;
-//   font-size: 15px;
-// }
+// used for all pages except home page
 .footer {
-  background: #F4F4F4;
-  // border: top;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
-  margin-top: 250px;
-  padding: 0px;
-  color: rgba(0,0,0,0.3);
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: -50px;
+  clear: both;
+  text-align: center;
+  text-shadow: none;
+  background-color: transparent;
+    p {
+      font-size:15px;
+      font-weight: lighter;
+      color: black;
+    }
 }

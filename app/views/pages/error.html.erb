@@ -15,32 +15,3 @@
 
 
 
-<!-- 1.container -->
-<div class="container align-items-center">
-<!-- 2. Card grid -->
-  <div class="cards py-5">
-    <!-- iteration -->
-    <% @cocktails.each do |cocktail|%>
-      <!-- 3. card trip  -->
-      <div class="card-trip">
-        <!-- main image -->
-        <%= cl_image_tag cocktail.photo, class: 'card-img', height: 300, width: 400, crop: :fill %>
-        <!-- 4. info part -->
-          <div class="card-trip-infos">
-              <div>
-                <h2> <%= link_to cocktail.name, cocktail %> </h2>
-              </div>
-            <%= link_to cocktail_path(cocktail), method: :delete do %> <i class="fa fa-trash-alt" style="color: gray"></i></%><% end %>
-          <!-- 4. info part -->
-          </div>
-      <!-- 3. card trip  -->
-      </div>
-    <!-- iteration -->
-    <% end %>
-  <!-- 2. Card grid -->
-  </div>
-    <div class="d-flex justify-content-center">
-      <%= link_to 'Add cocktail', new_cocktail_path, class: "btn btn-ghost"%>
-    </div>
-<!-- 1.container -->
-</div>
