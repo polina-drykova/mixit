@@ -16,7 +16,20 @@
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
 import { previewImageOnFileSelect } from '../components/photo_preview';
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 console.log('Hello World from Webpacker')
 previewImageOnFileSelect();
 
+// not using it:
+initSweetalert('#sweet-alert-demo', {
+  title: "Are you sure?",
+  text: "Once deleted, you will not be able to recover it",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}, (value) => {
+  console.log(value);
+}
+);
+// not using it

@@ -11,9 +11,9 @@
 <!-- add a cocktail end -->
 
 <!-- card container start -->
-  <div class="container mx-auto">
+  <div class="container mx-auto ">
     <div id="main">
-      <div class="cards mx-auto">
+      <div class="cards mx-auto mt-4">
         <!-- cards start -->
           <!-- iteration through cocktails -->
             <% @cocktails.each do |cocktail|%>
@@ -59,14 +59,44 @@
                         <i class="fas fa-plus-circle" style=""></i>
                       <% end %>
 
-                      <%= link_to (cocktail_path(cocktail)), method: :delete do %>
-                        <i class="fa fa-trash-alt" style=" font-weight: lighter;"></i>
-                      <% end %>
+
+
+                    <%= link_to (cocktail_path(cocktail)), 'data-toggle' => 'modal', 'data-target' => '#deleteAlert' do %>
+                    <i class="fa fa-trash-alt" style=" font-weight: lighter;"></i>
+                    <% end %>
+
+
+
+
+
+
                     </div>
                   </div>
                 <!-- back end -->
 
               </div>
+              <!-- modal for delete alert start -->
+                <div class="modal fade" id="deleteAlert" tabindex="-1" role="dialog" aria-labelledby="deleteAlertTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title text-center mx-auto" id="deleteAlertTitle"><i class="fas fa-exclamation-circle" style="font-size: 70px; color: red; margin-left: 100%;"></i></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body text-center">
+                        <h5>Are you sure?</h5>
+                        <p>Once deleted, you will not be able to recover it</p>
+                        <div class="d-flex justify-content-around align-items-center">
+                          <%= link_to 'Cancel', cocktails_path, class: 'upload-photo-link' %>
+                          <%= link_to 'Delete', cocktail_path(cocktail), class: 'upload-photo-link', method: :delete %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- modal delete alert end -->
 
               <!-- modal for new dose form start -->
                 <div class="modal fade" id="newDose" tabindex="-1" role="dialog" aria-labelledby="newDoseTitle" aria-hidden="true">
