@@ -9,7 +9,7 @@
 @import 'card_show';
 @import 'card_button';
 
-// form start
+// // FORM START
 .modal-content {
   border-radius: 6px;
 }
@@ -119,7 +119,7 @@ input:focus {
       margin-bottom: 2%;
     }
 }
-// // form end
+// // FORM END
 
 
 .container {
@@ -128,13 +128,13 @@ input:focus {
   padding-bottom: 20px;
 }
 
-.add-div {
-  width: 50%;
-  height: 60px;
+.header-wrapper {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.5%;
-  text-align: center;
 }
 
 .gradient-effect{
