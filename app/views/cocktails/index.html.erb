@@ -1,17 +1,26 @@
 
-<!-- add a cocktail button -->
-  <div class="add-div">
-    <%= link_to (new_cocktail_path) do %>
-      <button class="icon-btn add-btn">
-        <div class="add-icon"></div>
-        <div class="btn-txt">ADD NEW COCKTAIL</div>
-      </button>
-    <% end %>
-  </div>
-<!-- add a cocktail end -->
 
 <!-- card container start -->
   <div class="container mx-auto ">
+    <!-- header start -->
+      <div class="header-wrapper">
+        <div class="header">
+          <h1 class="my-auto"><%= @cocktails.length %> Cocktails</h1>
+          <p>in your collection</p>
+        </div>
+        <!-- add a cocktail button -->
+        <div class="my-auto">
+          <%= link_to (new_cocktail_path) do %>
+            <button class="icon-btn add-btn">
+              <div class="add-icon"></div>
+              <div class="btn-txt">ADD NEW COCKTAIL</div>
+            </button>
+          <% end %>
+        </div>
+        <!-- add a cocktail button -->
+      </div>
+    <!-- header end-->
+
     <div id="main">
       <div class="cards mx-auto mt-4">
         <!-- cards start -->
@@ -157,16 +166,16 @@
 
         <!-- cards end -->
       </div>
-<!-- add a cocktail button -->
-  <div class="add-div mt-5">
-    <%= link_to (new_cocktail_path) do %>
-      <button class="icon-btn add-btn">
-        <div class="add-icon"></div>
-        <div class="btn-txt">ADD NEW COCKTAIL</div>
-      </button>
-    <% end %>
-  </div>
-<!-- add a cocktail end -->
+      <!-- add a cocktail button -->
+        <div class="d-flex justify-content-center mt-2 py-1">
+          <%= link_to (new_cocktail_path) do %>
+            <button class="icon-btn add-btn">
+              <div class="add-icon"></div>
+              <div class="btn-txt">ADD NEW COCKTAIL</div>
+            </button>
+          <% end %>
+        </div>
+      <!-- add a cocktail end -->
     </div>
   </div>
 <!-- card container end -->
