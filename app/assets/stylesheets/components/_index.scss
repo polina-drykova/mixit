@@ -131,10 +131,16 @@ input:focus {
 .header-wrapper {
   width: 95%;
   display: flex;
+  height: auto;
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.5%;
+  color: #2D2628;
+    p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .gradient-effect{

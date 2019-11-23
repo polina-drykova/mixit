@@ -5,7 +5,7 @@
     <!-- header start -->
       <div class="header-wrapper">
         <div class="header">
-          <h1><%= @cocktails.length %> cocktails</h1>
+          <h1 class="my-auto"><%= @cocktails.length %> Cocktails</h1>
           <p>in your collection</p>
         </div>
         <!-- add a cocktail button -->
@@ -167,7 +167,7 @@
         <!-- cards end -->
       </div>
       <!-- add a cocktail button -->
-        <div class="d-flex justify-content-center mt-2">
+        <div class="d-flex justify-content-center mt-2 py-1">
           <%= link_to (new_cocktail_path) do %>
             <button class="icon-btn add-btn">
               <div class="add-icon"></div>
