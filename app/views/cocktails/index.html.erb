@@ -54,7 +54,11 @@
                                   <td><%= dose.description %></td>
                                 </div>
                                 <div class="two-side">
-                                  <td><%= dose.ingredient.name %> <%= link_to dose_path(dose), method: :delete do %><i class="fa fa-times" alt="remove"></i></%></td><% end %>
+                                  <td>
+                                    <%= dose.ingredient.name %> <%= link_to dose_path(dose), method: :delete do %>
+                                      <i class="fa fa-times" alt="remove"></i>
+                                    <% end %>
+                                  </td>
                                 </div>
                               </h2>
                             </tr>
@@ -63,41 +67,35 @@
                     </div>
                     <hr class=" mt-0 mb-0 mx-auto" style="width: 100%;">
                     <div class="buttons my-auto py-auto mx-auto">
-
                       <%= link_to (new_cocktail_dose_path(cocktail)), 'data-toggle' => 'modal', 'data-target' => '#newDose' do %>
                         <i class="fas fa-plus-circle" style=""></i>
                       <% end %>
-
-
-
-                    <%= link_to (cocktail_path(cocktail)), 'data-toggle' => 'modal', 'data-target' => '#deleteAlert' do %>
-                    <i class="fa fa-trash-alt" style=" font-weight: lighter;"></i>
-                    <% end %>
-
-
-
-
-
-
+                      <%= link_to (cocktail_path(cocktail)), 'data-toggle' => 'modal', 'data-target' => '#deleteAlert' do %>
+                        <i class="fa fa-trash-alt" style=" font-weight: lighter;"></i>
+                      <% end %>
                     </div>
                   </div>
                 <!-- back end -->
 
               </div>
-              <!-- modal for delete alert start -->
+
+              <!-- modal for delete cocktail alert start -->
                 <div class="modal fade" id="deleteAlert" tabindex="-1" role="dialog" aria-labelledby="deleteAlertTitle" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title text-center mx-auto" id="deleteAlertTitle"><i class="fas fa-exclamation-circle" style="font-size: 70px; color: red; margin-left: 100%;"></i></h5>
+                        <h5 class="modal-title text-center mx-auto" id="deleteAlertTitle"><i class="fas fa-exclamation-circle" style="font-size: 70px; margin-left: 110%; color: #f69557;"></i></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <div class="modal-body text-center">
-                        <h5>Are you sure?</h5>
-                        <p>Once deleted, you will not be able to recover it</p>
-                        <div class="d-flex justify-content-around align-items-center">
+                      <div class="modal-body text-center mt-3" style="width: 100%;">
+                        <div class="text mx-auto" style="width: 60%;">
+                          <h5>Are you sure?</h5>
+                          <p>Once deleted, you will not be able to recover it</p>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-around align-items-center mx-auto mb-0" style="width: 60%;">
                           <%= link_to 'Cancel', cocktails_path, class: 'upload-photo-link' %>
                           <%= link_to 'Delete', cocktail_path(cocktail), class: 'upload-photo-link', method: :delete %>
                         </div>
@@ -105,7 +103,7 @@
                     </div>
                   </div>
                 </div>
-              <!-- modal delete alert end -->
+              <!-- modal for delete cocktail alert end -->
 
               <!-- modal for new dose form start -->
                 <div class="modal fade" id="newDose" tabindex="-1" role="dialog" aria-labelledby="newDoseTitle" aria-hidden="true">
