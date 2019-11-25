@@ -14,13 +14,14 @@
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+// = require jquery3
+// = require popper
+// require bootstrap
+// require data-confirm-modal
+
 import 'bootstrap';
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { initSweetalert } from '../plugins/init_sweetalert';
-
-console.log('Hello World from Webpacker')
-previewImageOnFileSelect();
-
 // not using it:
 initSweetalert('#sweet-alert-demo', {
   title: "Are you sure?",
@@ -33,3 +34,7 @@ initSweetalert('#sweet-alert-demo', {
 }
 );
 // not using it
+
+console.log('Hello World from Webpacker')
+previewImageOnFileSelect();
+
