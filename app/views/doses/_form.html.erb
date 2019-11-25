@@ -1,17 +1,13 @@
-<!-- not using it -->
   <%= simple_form_for [@cocktail, @dose], html: { class: 'new' }, remote: true do |f| %>
     <div class="form-inputs col-12 input-effect mb-3 mx-auto">
       <%= f.association :ingredient,
-            class: "bg-white effect-18" %>
-            <span class="focus-border"></span>
+          class: "bg-white effect-18" %>
 
-      <%= f.input :description %>
+      <%= f.input :description,
+          style: 'focus: none'%>
     </div>
-    <div class="form-actions">
-      <%= f.button :submit, class: "create-button" %>
+    <div class="form-actions mt-3">
+      <%= f.button :submit, class: "create-button mb-3 mt-3" %>
+      <%= link_to 'Cancel', cocktails_path, class: 'mx-auto'%>
     </div>
   <% end %>
-<!-- not using it -->
-
-
-
