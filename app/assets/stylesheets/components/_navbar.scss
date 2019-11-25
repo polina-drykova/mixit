@@ -1,17 +1,18 @@
+
 .navbar {
   width: 100%;
   background: white;
-  // background: -webkit-linear-gradient(rgba(255, 255, 255, 0.8), rgba(251, 184, 141, 0.1));
   height: 60px;
   position: sticky;
   top: 0;
   z-index: 1;
-  box-shadow: 0 15px 40px rgba(44, 62, 80, 0.05);
+  // box-shadow: 0 15px 40px rgba(251, 184, 141, 0.05);
     .navbar-box {
       width: 80%;
       display: flex;
       justify-content: space-between;
     }
+
     .navbar-logo {
       height: 20px;
         &:hover {
@@ -23,3 +24,7 @@
 .navbar {
   flex-grow: 0;
 }
+
+// .navbar.logo img {
+//   width: 40px;
+// }
