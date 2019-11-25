@@ -1,13 +1,17 @@
 <!-- not using it -->
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <div class="form-inputs">
-      <%= f.association :ingredient %>
-      <%= f.input :description%>
+  <%= simple_form_for [@cocktail, @dose], html: { class: 'new' }, remote: true do |f| %>
+    <div class="form-inputs col-12 input-effect mb-3 mx-auto">
+      <%= f.association :ingredient,
+            class: "bg-white effect-18" %>
+            <span class="focus-border"></span>
+
+      <%= f.input :description %>
     </div>
     <div class="form-actions">
-      <%= f.button :submit, class: "btn btn-flat" %>
+      <%= f.button :submit, class: "create-button" %>
     </div>
   <% end %>
 <!-- not using it -->
+
 
 

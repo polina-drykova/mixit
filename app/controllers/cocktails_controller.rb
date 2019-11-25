@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: [:show, :destroy]
+  before_action :set_cocktail, only: [:show]
   # 1. can see list of cocktails: get 'cocktails'
   # --> index
   def index
@@ -26,38 +26,32 @@ class CocktailsController < ApplicationController
 
   def new
     # new cocktail part
-    @cocktail = Cocktail.new
-    # new dose part
-    @cocktail_dose = Cocktail.find(params[:cocktail_id])
-    @dose = Dose.new
-    @ingredients = Ingredient.all
-    @doses = Dose.all
+    # @cocktail = Cocktail.new
   end
 
   def create
     # new cocktail part
     @cocktail = Cocktail.new(cocktail_params)
+    @dose = Dose.new(dose_params)
+    @cocktail_dose = Cocktail.find(params[:cocktail_id])
+    @dose.cocktail = @cocktail_dose
       if @cocktail.save
         # redirect_to cocktail_path(@cocktail)
-        redirect_to cocktails_path
+      redirect_to cocktails_path
+
+      # elsif @dose.save
+      #   redirect_to cocktails_path
+
       else
-        render :new
+        render :index
       end
     # new dose part
-    @cocktail_dose = Cocktail.find(params[:cocktail_id])
-    @dose = Dose.new(dose_params)
-    @dose.cocktail = @cocktail_dose
-      if @dose.save
-        redirect_to cocktails_path
-      else
-        render :new
-      end
   end
 
-  def destroy
-    @cocktail.destroy
-    redirect_to cocktails_path
-  end
+  # def destroy
+  #   @cocktail.destroy
+  #   redirect_to cocktails_path
+  # end
 
   private
 
@@ -65,7 +59,11 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
   end
 
+   def dose_params
+    params.require(:dose).permit(:description, :ingredient_id)
+  end
+
   def cocktail_params
-    params.require(:cocktail).permit(:name, :ingredients, :doses, :photo)
+    params.require(:cocktail).permit(:name, :ingredients, :doses, :photo, :photo_cache)
   end
 end

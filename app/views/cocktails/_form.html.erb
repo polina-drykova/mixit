@@ -1,6 +1,6 @@
 
-<%= simple_form_for(@cocktail, html: { class: 'new' }, remote: true) do |f| %>
-  <div class="col-12 input-effect mb-3 mx-auto" >
+<%= simple_form_for @cocktail, html: { class: 'new' }, remote: true do |f| %>
+  <div class="form-group col-12 input-effect mb-3 mx-auto" >
     <%= f.input_field :name,
       placeholder: "Name",
       class: "bg-white effect-18",
@@ -8,14 +8,13 @@
       <span class="focus-border"></span>
   </div>
 
-  <div class="upload-btn-wrapper">
+  <div class="form-group upload-btn-wrapper">
     <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo-link mt-auto'}, label: ' Upload a photo' %>
     <%= f.input :photo_cache, as: :hidden %>
     <%= image_tag "", height: 370, width: 290, crop: :fill, class: "hidden", id: "photo-preview" %>
   </div>
-    <hr>
-  <div class="form-actions mt-4 mb-3">
-    <%= f.button :submit, class: "create-button"%>
+  <div class="actions mt-4 mb-3">
+    <%= f.button :submit, 'Submit', data: { disable_with: 'Please Wait…' }, class: "create-button" %>
   </div>
 <% end %>
 
