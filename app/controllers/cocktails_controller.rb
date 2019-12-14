@@ -32,19 +32,18 @@ class CocktailsController < ApplicationController
   def create
     # new cocktail part
     @cocktail = Cocktail.new(cocktail_params)
-    @dose = Dose.new(dose_params)
-    @cocktail_dose = Cocktail.find(params[:cocktail_id])
-    @dose.cocktail = @cocktail_dose
       if @cocktail.save
         # redirect_to cocktail_path(@cocktail)
       redirect_to cocktails_path
 
       # elsif @dose.save
       #   redirect_to cocktails_path
-
       else
         render :index
       end
+    # @dose = Dose.new(dose_params)
+    # @cocktail_dose = Cocktail.find(params[:cocktail_id])
+    # @dose.cocktail = @cocktail_dose
     # new dose part
   end
 
