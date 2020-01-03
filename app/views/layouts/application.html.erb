@@ -15,9 +15,9 @@
 
   <body>
     <%= render 'shared/navbar' unless action_name == "home" || action_name == "error" %>
-    <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <%= yield %>
     <%= render 'shared/footer' unless action_name == "home" || action_name == "error" %>
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>

@@ -3,11 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .dose-form-container {
   color: #3C3C3B;
-  width: 80%;
+  width: 90%;
   display: flex;
+  justify-content: space-between;
   direction: flex-row;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 4px;
+  background: white;
+  h1 {
+    text-align: center;
+  }
+  img {
+    border-radius: 4px 0 0 4px ;
+  }
 }
 
 a {
