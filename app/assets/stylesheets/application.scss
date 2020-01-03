@@ -58,7 +58,7 @@ a {
   background: white;
   bottom: 15px;
   right: 15px;
-  width: 260px;
+  width: auto;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   border-radius: 4px;
   margin: 8px;
@@ -72,5 +72,5 @@ a {
   border: 2px solid #1EDD88;
 }
 .alert {
-    border: 2px solid #FFC65A;
+  border: 2px solid #FFC65A;
 }
