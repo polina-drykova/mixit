@@ -23,6 +23,8 @@ gem 'simple_form'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'bootstrap', '~> 4.0'
 gem 'jquery-rails'
+gem 'devise'
+
 
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
