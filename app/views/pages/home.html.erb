@@ -12,7 +12,7 @@
           <% if user_signed_in? %>
             <div class="nav-item dropdown">
               <% unless current_user.avatar.blank? %>
-                <%= cl_image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <%= cl_image_tag current_user.avatar, class: "avatar-new dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <% else %>
                 <i class="fas fa-user-circle avatar" id="navbarDropdown" data-target="#dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 40px;"></i>
               <% end %>
