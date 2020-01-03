@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: 'pages#home'
   get '/error', to: 'pages#error'
   ### Cocktails:
@@ -24,6 +25,5 @@ Rails.application.routes.draw do
   resources :cocktails, only: [:index, :show, :new, :create] do
     resources :doses, only: [:new, :create]
   end
-      resources :doses, only: [:destroy]
-
+  resources :doses, only: [:destroy]
 end
