@@ -51,3 +51,26 @@ a {
       color: $darkpeach !important;
     }
 }
+
+#alert-window {
+  position: absolute;
+  padding: 16px 24px;
+  background: white;
+  bottom: 15px;
+  right: 15px;
+  width: 260px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin: 8px;
+  // height: 100px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+  cursor: pointer;
+}
+.notice {
+  border: 2px solid #1EDD88;
+}
+.alert {
+    border: 2px solid #FFC65A;
+}

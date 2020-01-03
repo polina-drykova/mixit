@@ -15,9 +15,23 @@
 
   <body>
     <%= render 'shared/navbar' unless action_name == "home" || action_name == "error" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= yield %>
+        <% if notice.present? %>
+      <p class="notice" id="alert-window" onclick="closeFunction()"><%= notice %>
+          <i class="fas fa-times my-auto"></i>
+      </p>
+        <% end %>
+        <% if alert.present? %>
+      <p class="alert" id="alert-window" onclick="closeFunction()"><%= alert %>
+          <i class="fas fa-times my-auto"></i>
+      </p>
+        <% end %>
+      <script>
+        function closeFunction() {
+          var x = document.getElementById("alert-window");
+          x.style.display = "none"
+        }
+      </script>
     <%= render 'shared/footer' unless action_name == "home" || action_name == "error" %>
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>
