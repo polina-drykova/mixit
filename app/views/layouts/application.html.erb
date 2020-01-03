@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' unless controller_name == "registrations" || controller_name == "sessions" || action_name == "home" || action_name == "error" %>
+    <%= render 'shared/navbar' unless action_name == "home" || action_name == "error" %>
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
