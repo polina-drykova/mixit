@@ -14,11 +14,11 @@
               <% unless current_user.avatar.blank? %>
                 <%= cl_image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <% else %>
-                <i class="fas fa-user-circle avatar" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 40px;"></i>
+                <i class="fas fa-user-circle avatar" id="navbarDropdown" data-target="#dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 40px;"></i>
               <% end %>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <%= link_to "Profile", "#", class: "dropdown-item" %>
-                <hr class="mx-auto mt-1 mb-0 p-0 d-flex" style="width: 75%;">
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" id="dropdown-menu">
+                <%#= link_to "Profile", "#", class: "dropdown-item" %>
+                <!-- <hr class="mx-auto mt-1 mb-0 p-0 d-flex" style="width: 75%;"> -->
                 <%#= link_to "Dashboard", "#", class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
