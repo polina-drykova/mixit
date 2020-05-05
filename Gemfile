@@ -24,6 +24,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'bootstrap', '~> 4.0'
 gem 'jquery-rails'
 gem 'devise'
+gem "actionview", ">= 5.2.4.2"
+
 
 
 gem 'cloudinary', '~> 1.9.1'
