@@ -20,18 +20,13 @@
   margin-right: auto;
   align-item: center;
   margin-top: 10%;
-
     h5 {
       color: #2D2628;
       width: 40%;
       padding-bottom: 5px;
-      text-align: right;
     }
-
     .row {
       width: 50%;
-      text-align: end;
-      align-item: end;
       margin: 0;
     }
 }
@@ -86,55 +81,42 @@
 
 
 // responsivness:
-@media (min-width: 375px) and (max-width: 760px) {
-  .banner {
-    .row{
-      display: flex;
-      justify-content: flex-start;
-    }
-
-    h5 {
-      width: 50%;
-      font-size: 40px;
-      text-align: center;
-    }
-
-  }
-}
-
-@media (min-width: 761px) and (max-width: 800px) {
-  .banner {
-    .row{
-      width: 55%;
-      display: flex;
-      justify-content: flex-start;
-    }
-
-    h5 {
-      width: 55%;
-      font-size: 50px;
-      text-align: left;
-    }
-
-  }
-}
-
-
-@media (min-width: 801px) and (max-width: 1500px) {
+@media (min-width: 100px) and (max-width: 575px) {
   .banner {
     .label {
-      margin-top: 7%;
+      width: 82%;
     }
     .row{
+      width: 60%;
       display: flex;
       justify-content: flex-start;
     }
     h5 {
-      width: 50%;
-      font-size: 60px;
-      text-align: left;
+      font-size: 40px;
+      text-align: start;
     }
+
   }
 }
+
+
+
+
+// @media (min-width: 801px) and (max-width: 1500px) {
+//   .banner {
+//     .label {
+//       margin-top: 7%;
+//     }
+//     .row{
+//       display: flex;
+//       justify-content: flex-start;
+//     }
+//     h5 {
+//       width: 50%;
+//       font-size: 60px;
+//       text-align: left;
+//     }
+//   }
+// }
 
 
