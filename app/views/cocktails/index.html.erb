@@ -7,7 +7,7 @@
           <p>in collection</p>
         </div>
         <!-- add a cocktail button -->
-          <div class="my-auto">
+          <div>
               <button class="icon-btn add-btn" data-toggle="modal" data-target="#newCocktail">
                 <div class="add-icon"></div>
                 <div class="btn-txt">ADD NEW COCKTAIL</div>
@@ -42,11 +42,11 @@
               <div class="card-wrapper" >
 
                 <!-- front start -->
-                  <div class="card card--front" >
-                    <div class="gradient-effect">
-                      <%= cl_image_tag cocktail.photo, style: 'border-radius: 6px; z-index: -1', height: 370, width: 290, crop: :fill %>
-                    </div>
-                    <div class="name text-center mx-auto">
+                  <div class="card card--front" style="border-radius: 6px; background-image: url(<%= cocktail.photo %>); background-size: 102%; background-position: center; background-repeat: no-repeat;" >
+                    <!-- <div class="gradient-effect"> -->
+                      <%#= cl_image_tag cocktail.photo, style: 'border-radius: 6px; z-index: -1', height: 370, width: 290, crop: :fill %>
+                    <!-- </div> -->
+                    <div class="name text-center mx-auto" style="border-radius: 6px;">
                       <h1>  <%= cocktail.name.upcase %></h1>
                     </div>
                   </div>
@@ -174,5 +174,3 @@
     </div>
   </div>
 <!-- card container end -->
-
-

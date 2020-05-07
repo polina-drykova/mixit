@@ -126,19 +126,17 @@ input:focus {
 
 
 .container {
-  width: 75%;
+  width: 70%;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
 .header-wrapper {
-  width: 95%;
+  width: 100%;
   display: flex;
   height: auto;
   justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.5%;
+  margin-top: 30px;
   color: #2D2628;
     p {
     margin-top: 0;
@@ -146,42 +144,24 @@ input:focus {
   }
 }
 
-.gradient-effect{
-  position: relative;
-  display: block;
-
-    &::before {
-      border-radius: 6px;
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -1px;
-      right: 0;
-      height: 100.5%;
-      width: 101%;
-      background: -webkit-linear-gradient(rgba(44, 62, 80, 0.8), rgba(251, 184, 141, 0.1));
-    }
-}
 
 .card-wrapper {
-  width: 290px;
-  height: 370px;
-  object-fit: cover;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  height: 360px;
   backface-visibility: hidden;
   border-radius: 6px;
 
-
   .name {
     width: 100%;
-    position: absolute;
-    top: 35%;
-    padding-left: 15%;
-    padding-right: 15%;
+    height: 100%;
+    // background: rgba(44, 62, 80, 0.4);
+    background: rgba(0,0,0,0.4);
     text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
              0px 8px 13px rgba(0,0,0,0.1),
              0px 18px 23px rgba(0,0,0,0.1);
+    h1 {
+      padding-top: 48%;
+    }
   }
 
   .buttons {
@@ -225,10 +205,9 @@ input:focus {
 
 
 .card {
-  width: 290px;
-  height: 370px;
+  width: 100%;
+  height: 100%;
   border-radius: 6px;
-  // box-shadow: 0 15px 40px rgba(0,0,0, .15);
   transition: all 1s;
   backface-visibility: hidden;
 
@@ -293,6 +272,17 @@ input:focus {
 i .fa-exclamation-circle {
   color: $darkpeach !important;
 }
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .container {
+    width: 85%;
+  }
+  .header-wrapper {
+    align-items: top!important;
+  }
+}
+
 
 
 
