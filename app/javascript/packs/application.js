@@ -21,6 +21,8 @@
 
 import 'bootstrap';
 import { previewImageOnFileSelect } from '../components/photo_preview';
+import { previewAvatarOnFileSelect } from '../components/avatar_preview';
+
 import { initSweetalert } from '../plugins/init_sweetalert';
 // not using it:
 initSweetalert('#sweet-alert-demo', {
@@ -38,3 +40,4 @@ initSweetalert('#sweet-alert-demo', {
 console.log('Hello World from Webpacker')
 previewImageOnFileSelect();
 
+previewAvatarOnFileSelect();
