@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: [:show]
+  before_action :set_cocktail, only: [:show, :destroy]
   # 1. can see list of cocktails: get 'cocktails'
   # --> index
   def index
@@ -47,10 +47,10 @@ class CocktailsController < ApplicationController
     # new dose part
   end
 
-  # def destroy
-  #   @cocktail.destroy
-  #   redirect_to cocktails_path
-  # end
+  def destroy
+    @cocktail.destroy
+    redirect_to cocktails_path
+  end
 
   private
 

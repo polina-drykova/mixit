@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   # 2. A user can delete a dose that belongs to an existing cocktail.
   # DELETE "doses/25"
   # --> destroy
-  resources :cocktails, only: [:index, :show, :new, :create] do
+  resources :cocktails, only: [:index, :show, :new, :create, :destroy] do
     resources :doses, only: [:new, :create]
   end
   resources :doses, only: [:destroy]
