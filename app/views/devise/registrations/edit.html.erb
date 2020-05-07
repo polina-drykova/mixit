@@ -4,7 +4,7 @@
     <% unless current_user.avatar.blank? %>
       <%= cl_image_tag current_user.avatar, class: 'img' %>
     <% else %>
-      <%= image_tag 'person-placeholder.jpg', class: 'img' %>
+      <%= image_tag 'placeholder.png', class: 'img' %>
     <% end %>
   </div>
 
