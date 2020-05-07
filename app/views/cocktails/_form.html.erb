@@ -12,7 +12,7 @@
     <%= f.input :photo,
       input_html: { class: 'hidden', id: 'photo-input'},
       label_html: { class: 'upload-photo-link mt-auto'},
-      label: ' Upload a photo' %>
+      label: 'Upload a photo' %>
     <%= f.input :photo_cache, as: :hidden %>
 
     <%= image_tag "", height: 370, width: 290, crop: :fill, class: "hidden", id: "photo-preview" %>
